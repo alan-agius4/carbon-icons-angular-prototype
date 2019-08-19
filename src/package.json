@@ -1,0 +1,15 @@
+{
+  "name": "@carbon/icons-angular",
+  "description": "Angular Carbon Icons",
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/compiler": "^8.0.0",
+    "@angular/core": "^8.0.0",
+    "@carbon/icon-helpers": "^10.4.0"
+  },
+  "dependencies": {
+    "tslib": "^1.9.1"
+  },
+  "sideEffects": false
+}

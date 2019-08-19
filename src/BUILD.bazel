@@ -1,0 +1,50 @@
+
+load("@npm_angular_bazel//:index.bzl", "ng_module", "ng_package")
+load("@npm_bazel_typescript//:defs.bzl", "ts_library")
+
+# Root "@carbon/icons-angular" entry-point.
+ng_module(
+    name = "icons-angular",
+    srcs = glob(
+        ["*.ts"]
+    ),
+    # There is currently a problem with this which will be fixed by https://github.com/angular/angular/pull/32185
+    bundle_dts = False,
+    tsconfig = ":tsconfig-build.json",
+    module_name = "@carbon/icons-angular",
+    deps = [
+        ":typings",
+        "//src/http:http",
+        "//src/iso:iso",
+        "@npm//@angular/core",
+        "@npm//tslib",
+        "@npm//rxjs",
+    ],
+)
+
+ts_library(
+    name = "typings",
+    srcs = [":typings.d.ts"],
+    tsconfig = "carbon_icons_angular/tsconfig.json",
+    visibility = ["//visibility:public"],
+)
+
+# Creates the @carbon/icons-angular package published to npm.
+ng_package(
+    name = "npm_package",
+    srcs = ["package.json"],
+    entry_point = ":public-api.ts",
+    entry_point_name = "icons-angular",
+    globals = {
+        "tslib": "tslib",
+        "@angular/core": "ng.core",
+        "@carbon/icons-angular/http": "carbon.iconsAngular.http",
+        "@carbon/icons-angular/iso": "carbon.iconsAngular.iso",
+        "@carbon/icon-helpers": "carbon.iconHelpers"
+    },
+    deps = [
+        "//src/http:http",
+        "//src/iso:iso",
+        ":icons-angular"
+    ]
+)
