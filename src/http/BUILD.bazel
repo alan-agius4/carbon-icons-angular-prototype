@@ -8,7 +8,7 @@ ng_module(
     # There is currently a problem with this which will be fixed by https://github.com/angular/angular/pull/32185
     bundle_dts = False,
     visibility = ["//visibility:public"],
-	tsconfig = ":tsconfig-build.json",
+	tsconfig = "//src:tsconfig-build.json",
     module_name = "@carbon/icons-angular/http",
     deps = [
         "//src:typings",

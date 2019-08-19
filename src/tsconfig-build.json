@@ -4,7 +4,6 @@
 // extending the generic Bazel build tsconfig which will be used for each entry-point.
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "../dist/packages/carbon-icons",
   },
   "files": [
@@ -12,6 +11,11 @@
     "typings.d.ts"
   ],
   "angularCompilerOptions": {
-    "flatModuleId": "@carbon/icons",
+    "annotateForClosureCompiler": true,
+    "strictMetadataEmit": true,
+    "flatModuleOutFile": "index.js",
+    "flatModuleId": "@carbon/icons-angular",
+    "skipTemplateCodegen": true,
+    "fullTemplateTypeCheck": true
   }
 }
