@@ -10,6 +10,7 @@ ng_module(
     visibility = ["//visibility:public"],
 	tsconfig = "//src:tsconfig-build.json",
     module_name = "@carbon/icons-angular/iso",
+    flat_module_out_file = "iso",
     deps = [
         "//src:typings",
         "@npm//@angular/core",

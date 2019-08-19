@@ -13,8 +13,6 @@
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
-    "flatModuleOutFile": "index.js",
-    "flatModuleId": "@carbon/icons-angular",
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": true
   }
