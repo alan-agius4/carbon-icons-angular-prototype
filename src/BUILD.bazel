@@ -9,8 +9,7 @@ ng_module(
     srcs = glob(
         ["*.ts"]
     ),
-    # There is currently a problem with this which will be fixed by https://github.com/angular/angular/pull/32185
-    bundle_dts = False,
+    bundle_dts = True,
     tsconfig = ":tsconfig-build.json",
     module_name = "@carbon/icons-angular",
     flat_module_out_file = "carbon",

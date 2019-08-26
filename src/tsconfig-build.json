@@ -4,7 +4,8 @@
 // extending the generic Bazel build tsconfig which will be used for each entry-point.
 {
   "compilerOptions": {
-    "outDir": "../dist/packages/carbon-icons"
+    "outDir": "../dist/packages/carbon-icons",
+    "skipLibCheck": true
   },
   "files": [
     "public-api.ts",

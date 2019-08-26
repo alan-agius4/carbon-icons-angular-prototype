@@ -3,10 +3,9 @@ load("@npm_angular_bazel//:index.bzl", "ng_module")
 ng_module(
     name = "http",
     srcs = glob(
-        ["**/*.ts"]
+        ["*.ts"]
     ),
-    # There is currently a problem with this which will be fixed by https://github.com/angular/angular/pull/32185
-    bundle_dts = False,
+    bundle_dts = True,
     visibility = ["//visibility:public"],
 	tsconfig = "//src:tsconfig-build.json",
     module_name = "@carbon/icons-angular/http",
